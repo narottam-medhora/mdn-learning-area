@@ -1,0 +1,9 @@
+body  {
+    background-color: blue;
+}
+
+@media (max-width: 30em) {
+    body {
+        background-color: yellow;
+    }
+}
