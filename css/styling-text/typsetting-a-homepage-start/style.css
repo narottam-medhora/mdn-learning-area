@@ -1,0 +1,192 @@
+/* General setup */
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0 auto;
+    min-width: 1000px;
+    max-width: 1400px;
+  }
+  
+  /* Layout */
+  
+  section {
+    float: left;
+    width: 50%;
+  }
+  
+  aside {
+    float: left;
+    width: 30%;
+  }
+  
+  nav {
+    float: left;
+    width: 20%;
+  }
+  
+  footer {
+    clear: both;
+  }
+  
+  header, section, aside, nav, footer {
+    padding: 20px;
+  }
+  
+  /* header and footer */
+  
+  header, footer {
+    border-top: 5px solid #a66;
+    border-bottom: 5px solid #a66;
+  }
+  
+  /* WRITE YOUR CODE BELOW HERE */
+
+  /* Font styles */
+
+@font-face {
+    font-family: 'open_sans';
+    src: url('fonts/opensans-regular-webfont.woff2') format('woff2'),
+         url('fonts/opensans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'playfair';
+    src: url('fonts/playfairdisplay-regular-webfont.woff2') format('woff2'),
+         url('fonts/playfairdisplay-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-family: playfair, "Times New Roman", Times, serif;
+}
+
+h1, 
+h2 {
+    font-family: open_sans, Helvetica, Arial, sans-serif;
+}
+
+/* General text styling */
+
+html {
+    font-size: 10px;
+}
+
+h1 {
+    font-size: 5rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+body {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.1rem;
+}
+
+h1, 
+h2 {
+    letter-spacing: 0.1rem;
+}
+
+h2 + p {
+    text-indent: 20px;
+}
+
+/* Link styling */
+
+a {
+    outline: none;
+}
+
+a:link,
+a:visited {
+    color: rgb(187, 99, 99);
+}
+
+a:focus {
+    color: rgb(226, 221, 221);
+    background-color: rgb(187, 99, 99);
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    color: white;
+    background-color: rgb(173, 78, 78);
+}
+
+a[href*="http"] {
+    background-image: url(external-link-52.png);
+    background-size: 1.5rem 1.5rem;
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    padding-right: 1.8rem;
+}
+
+/* List styling */
+ul,
+ol {
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+}
+
+@counter-style clipboard {
+    system: cyclic;
+    symbols: "\1F4CB";
+    suffix: " ";
+}
+
+aside li {
+    list-style-type: clipboard;
+}
+
+/* Nav menu styling */
+
+nav ul {
+    padding-left: 0;
+    margin-top: 0.8rem;
+}
+
+nav li {
+    margin-bottom: 2rem;
+    list-style-type: none;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 3;
+    font-size: 2.5rem;
+    width: 100%;
+    border: 2px solid rgb(187, 99, 99);
+}
+
+nav a:focus, 
+nav a:hover {
+    background: #a66;
+    color: lightgrey;
+}
+
+nav a:active {
+    background-color: red;
+    color: white;   
+}
+
+
+
