@@ -1,0 +1,52 @@
+/* Font faces */
+
+@font-face {
+    font-family: 'great_vibesregular';
+    src: url('fonts/greatvibes-regular-webfont.woff2') format('woff2'),
+         url('fonts/greatvibes-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('fonts/greatvibes-regular-webfont.woff2') format('woff2'),
+         url('fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* General setup */
+
+html {
+    font-size: 10px;
+    margin: 0;
+    font-family: sans-serif;
+  }
+  
+  body {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Typography */
+  
+  h1 {
+    font-family: "great_vibesregular", cursive;
+    font-size: 3.2rem;
+  }
+  
+  h2 {
+    font-family: "great_vibesregular", cursive;
+    font-size: 2.4rem;
+  }
+  
+  p {
+    font-family: monteserratregular, 'Times New Roman', Times, serif;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    word-spacing: 0.6rem;
+  }
