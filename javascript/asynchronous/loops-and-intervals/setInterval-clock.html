@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Simple setInterval clock</title>
+    <style>
+      p {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="clock"></p>
+    <p class="stopwatch"></p>
+
+    <!-- Create buttons -->
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="reset">Reset</button>
+
+    <script>
+      // Create a hooks for the buttons
+      let startButton = document.getElementById("start");
+      let stopButton = document.getElementById("stop");
+      let resetButton = document.getElementById("reset");
+
+      // Define a counter variable for the number of seconds and set it to zero
+      let elapsedTime = 0;
+
+      // Define a global variable to store the interval when it is active
+      let stopWatch;
+
+      // Store a reference to the display paragraph in a variable
+      const displayPara = document.querySelector('.stopwatch');
+
+      // Function to calculate the current hours, minutes, and seconds, and display the count
+      function displayCount() {
+          // Calculate current hours, minutes, and seconds
+          let hours = Math.floor(elapsedTime/3600);
+          let minutes = Math.floor((elapsedTime % 3600)/60);
+          let seconds = Math.floor(elapsedTime % 60);
+
+          // Display a leading zero if the values are less than ten
+          let displayHours = (hours < 10) ? `0${hours}`: hours;
+          let displayMinutes = (minutes < 10) ? `0${minutes}`: minutes;
+          let displaySeconds = (seconds < 10) ? `0${seconds}`: seconds;
+
+          // Write the current stopwatch display time into the display paragraph
+          displayPara.textContent = `${displayHours}:${displayMinutes}:${displaySeconds}`;
+
+          // Increment the elapsed time by one
+          elapsedTime++;
+      }
+
+      // When the start button is pressed, start running displayCount() once per second using setInterval()
+      startButton.addEventListener('click', () => {
+          stopWatch = setInterval(displayCount, 1000);
+          startButton.disabled = true;
+      });
+
+      // When the stop button is pressed, clear the interval to stop the count
+      stopButton.addEventListener('click', () => {
+          clearInterval(stopWatch);
+          startButton.disabled = false;
+      })
+
+      // When the reset button is pressed, set the counter back to zero, then immediately update the display
+      resetButton.addEventListener('click', () => {
+          clearInterval(stopWatch);
+          startButton.disabled = false;
+          elapsedTime = 0;
+          displayCount();
+      });
+
+      // Run the displayCount() once as soon as the page loads so the clock is displayed
+      displayCount();
+    </script>
+
+    
+  </body>
+</html>
