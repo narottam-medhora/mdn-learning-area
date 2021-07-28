@@ -10,7 +10,6 @@
     </style>
   </head>
   <body>
-    <p class="clock"></p>
     <p class="stopwatch"></p>
 
     <!-- Create buttons -->
@@ -19,7 +18,7 @@
     <button id="reset">Reset</button>
 
     <script>
-      // Create a hooks for the buttons
+      // Create hooks for the buttons
       let startButton = document.getElementById("start");
       let stopButton = document.getElementById("stop");
       let resetButton = document.getElementById("reset");
@@ -40,7 +39,7 @@
           let minutes = Math.floor((elapsedTime % 3600)/60);
           let seconds = Math.floor(elapsedTime % 60);
 
-          // Display a leading zero if the values are less than ten
+          // Display a leading zero if the values are less than ten using terary operators
           let displayHours = (hours < 10) ? `0${hours}`: hours;
           let displayMinutes = (minutes < 10) ? `0${minutes}`: minutes;
           let displaySeconds = (seconds < 10) ? `0${seconds}`: seconds;
@@ -55,12 +54,14 @@
       // When the start button is pressed, start running displayCount() once per second using setInterval()
       startButton.addEventListener('click', () => {
           stopWatch = setInterval(displayCount, 1000);
+          // Disable the start button to prevent multiple instances from running
           startButton.disabled = true;
       });
 
       // When the stop button is pressed, clear the interval to stop the count
       stopButton.addEventListener('click', () => {
           clearInterval(stopWatch);
+          // Reenable the start button
           startButton.disabled = false;
       })
 
